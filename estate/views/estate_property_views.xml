@@ -1,7 +1,62 @@
 <?xml version="1.0"?>
 <odoo>
+   <record id="estate_property_view_tree" model="ir.ui.view">
+      <field name="name">estate.property.tree</field>
+      <field name="model">estate.property</field>
+      <field name="arch" type="xml">
+         <tree>
+            <field name="name" string="Title"/>
+            <field name="postcode"/>
+            <field name="bedrooms"/>
+            <field name="living_area" string="Living Area(sqm)"/>
+            <field name="expected_price"/>
+            <field name="selling_price"/>
+            <field name="date_availability" string="Available from"/>
+         </tree>
+      </field>
+   </record>
+
+   <record id="estate_property_view_form" model="ir.ui.view">
+      <field name="name">estate.property.form</field>
+      <field name="model">estate.property</field>
+      <field name="arch" type="xml">
+         <form string="Property">
+            <sheet>
+               <h1 class="mb32">
+               <field name="name" class="mb16"/>
+               </h1>
+               <group>
+                  <group>
+                     <field name="postcode"/>
+                     <field name="date_availability" string="Available from"/>
+                  </group>
+                  <group>
+                     <field name="expected_price"/>
+                     <field name="selling_price"/>
+                  </group>
+                  <notebook>
+                     <page string="Description">
+                        <group>
+                        <field name="description" string="Description"/>
+                        <field name="bedrooms"/>
+                        <field name="living_area" string="Living Area (sqm)"/>
+                        <field name="facades"/>
+                        <field name="garage"/>
+                        <field name="garden"/>
+                        <field name="garden_area" string="Garden Area (sqm)"/>
+                        <field name="garden_orientation"/>
+                     </group>
+                     </page>
+                  </notebook>
+               </group>
+         </sheet>         
+      </form>
+
+      </field>
+   </record>
+
    <record id="estate_property_action" model="ir.actions.act_window">
-      <field name="name">Test action</field>
+      <field name="name">List of properties</field>
       <field name="res_model">estate.property</field>
       <field name="view_mode">tree,form</field>
    </record>
