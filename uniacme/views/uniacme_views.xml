@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<odoo>
+   <record id="voting_view_tree" model="ir.ui.view">
+      <field name="name">voting.tree</field>
+      <field name="model">voting</field>
+      <field name="arch" type="xml">
+         <header/>
+         <tree>
+            <field name="descripcion"/>
+            <field name="periodo"/>
+            <field name="estado"/>
+            <header>
+               <button name="estado_proceso" type="object" string="Iniciar votacion"/>     
+            </header>
+         </tree>
+      </field>
+   </record>
+
+
+   <record id="voting_action" model="ir.actions.act_window">
+      <field name="name">Lista de votaciones</field>
+      <field name="res_model">voting</field>
+      <field name="view_mode">tree,form</field>
+   </record>
+</odoo>

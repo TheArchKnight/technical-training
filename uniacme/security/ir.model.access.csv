@@ -1,0 +1,3 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"uniacme.access_voting","access_voting","uniacme.model_voting","base.group_user",1,1,1,1
+"uniacme.access_sede","access_sede","uniacme.model_sede","base.group_user",1,1,1,1
